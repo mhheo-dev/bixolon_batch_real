@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bixpos.batch.mapper.CalculateUseFeeMapper">
+    <!-- 이용 상태 변경 (무료사용 기간 만료 항목에 대한 일괄 변경처리 신규->이용중) -->
+      <update id="updateBillingStatus">
+          UPDATE ${accdtdb}.dbo.SHOP_BILL
+          <!-- SHOP_BILL.SB_ST 서비스 상태 - 신규 N / 이용중(구독중) S / 중지 X / 일시불 O -->
+          SET SB_ST = 'S'
+          , MOD_USRID = #{modUsrid}
+          , MOD_DT = GETDATE()
+          WHERE SB_ST = 'N'
+--             AND (CONVERT(datetime, CONCAT(SB_PAY_START_MM, '01'), 112) <![CDATA[ < ]]> GETDATE())
+      </update>
+
+</mapper>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<configuration>
+
+  <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+
+  <property name="LOG_PATH" value="${LOG_PATH:-${user.home}/logs}"/>
+  <property name="LOG_FILE" value="${LOG_FILE}"/>
+  <property name="MAX_HISTORY" value="60"/>
+  <property name="MAX_SIZE" value="100MB"/>
+
+  <property name="CONSOLE_PATTERN" value="%clr(%d{MM-dd HH:mm:ss.SSS, Asia/Seoul}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr([%-60.60(%class{50} > %method):%5line]){magenta} %clr([%.7t]){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"/>
+  <property name="FILE_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS, Asia/Seoul} %-5level [%-60.60(%class{50}.%method):%5line] [%.7t] >> %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"/>
+  <property name="FILE_ERROR_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS, Asia/Seoul} %-5level [%-60.60(%class{50}.%method):%5line] >> %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"/>
+  <springProperty name="SPRING_APPLICATION_NAME" source="spring.application.name" />
+
+  <appender name="CONSOLE_APPENDER" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>${CONSOLE_PATTERN}</pattern>
+      <charset>utf8</charset>
+    </encoder>
+  </appender>
+
+  <!-- 기본 파일 로그 -->
+  <!-- 일자별로 모든 서비스 로그를 한 파일에 기록 한다. -->
+  <appender name="FILE_APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>${LOG_PATH}/${LOG_FILE}.log</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+      <fileNamePattern>${LOG_PATH}/%d{yyyyMMdd}/${LOG_FILE}-%d{yyyyMMdd}.%i.log</fileNamePattern>
+      <maxHistory>${MAX_HISTORY}</maxHistory>
+      <maxFileSize>${MAX_SIZE}</maxFileSize>
+    </rollingPolicy>
+    <encoder>
+      <pattern>${FILE_PATTERN}</pattern>
+      <charset>utf8</charset>
+    </encoder>
+  </appender>
+
+
+  <!-- 오류 로그  -->
+  <!-- 모든 오류가 일자별로 한 파일에 기록 한다. -->
+  <appender name="FILE_ERROR_APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>${LOG_PATH}/${LOG_FILE}-error.log</file>
+    <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+      <level>ERROR</level>
+    </filter>
+    <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+      <fileNamePattern>${LOG_PATH}/%d{yyyyMMdd}/${LOG_FILE}-error-%d{yyyyMMdd}.%i.log</fileNamePattern>
+      <maxHistory>${MAX_HISTORY}</maxHistory>
+      <maxFileSize>${MAX_SIZE}</maxFileSize>
+    </rollingPolicy>
+    <encoder>
+      <pattern>${FILE_ERROR_PATTERN}</pattern>
+      <charset>utf8</charset>
+    </encoder>
+  </appender>
+
+<!--  <logger name="java.sql" level="INFO" />
+  <logger name="org.apache" level="WARN" />
+  <logger name="org.hibernate" level="INFO" />
+  <logger name="org.mybatis.spring" level="INFO" />
+  <logger name="org.springframework" level="INFO" />
+  <logger name="org.springframework.web.filter" level="DEBUG" />
+  <logger name="com.bixpos.asp.mapper" level="INFO" />-->
+
+  <!-- spring profiles 에 따른 로그 레벨 설정 (spring boot 에서만 설정 가능함.) -->
+  <springProfile name="local">
+    <logger name="com.bixpos.asp" level="DEBUG" />
+    <logger name="jdbc" level="OFF"/>
+    <logger name="org.springframework" level="INFO" />
+    <logger name="org.springframework.web.filter" level="DEBUG" />
+
+    <!-- 정의 되지 않은 logger 들에게 일괄 적용됨 -->
+    <root level="INFO">
+      <appender-ref ref="CONSOLE_APPENDER" />
+      <appender-ref ref="FILE_APPENDER" />
+      <appender-ref ref="FILE_ERROR_APPENDER" />
+    </root>
+  </springProfile>
+
+  <springProfile name="dev">
+    <logger name="com.bixpos.asp" level="DEBUG" />
+    <logger name="jdbc" level="OFF"/>
+    <logger name="org.springframework" level="INFO" />
+    <logger name="org.springframework.web.filter" level="DEBUG" />
+
+    <!-- 정의 되지 않은 logger 들에게 일괄 적용됨 -->
+    <root level="INFO">
+      <appender-ref ref="FILE_APPENDER" />
+      <appender-ref ref="FILE_ERROR_APPENDER" />
+    </root>
+  </springProfile>
+
+  <springProfile name="tst">
+    <logger name="com.bixpos.asp" level="DEBUG" />
+    <logger name="jdbc" level="OFF"/>
+    <logger name="org.springframework" level="INFO" />
+    <logger name="org.springframework.web.filter" level="DEBUG" />
+
+    <!-- 정의 되지 않은 logger 들에게 일괄 적용됨 -->
+    <root level="INFO">
+      <appender-ref ref="FILE_APPENDER" />
+      <appender-ref ref="FILE_ERROR_APPENDER" />
+    </root>
+  </springProfile>
+
+  <springProfile name="prd">
+    <logger name="com.bixpos.asp" level="DEBUG" />
+    <logger name="com.bixpos.asp.mapper.SystemMapper" level="OFF" />
+    <logger name="com.bixpos.asp.mapper.LoginMapper" level="OFF" />
+    <logger name="jdbc" level="OFF"/>
+    <logger name="org.springframework" level="INFO" />
+    <logger name="org.springframework.web.filter" level="DEBUG" />
+
+    <!-- 정의 되지 않은 logger 들에게 일괄 적용됨 -->
+    <root level="INFO">
+      <appender-ref ref="FILE_APPENDER" />
+      <appender-ref ref="FILE_ERROR_APPENDER" />
+    </root>
+  </springProfile>
+
+</configuration>
