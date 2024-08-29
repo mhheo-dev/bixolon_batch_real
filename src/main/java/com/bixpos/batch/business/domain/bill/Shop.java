@@ -32,7 +32,7 @@ public class  Shop {
         private String sId;
         private String shopId;
         private String chargeAmount;
-        private String chargeRsult;
+        private String chargeResult;
     }
 
     @Getter

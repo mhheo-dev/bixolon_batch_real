@@ -293,3 +293,8 @@ Caused by: java.io.FileNotFoundException: class path resource [com.bixpos.batch/
 2024-08-29 22:52:13.196 INFO  [o.s.scheduling.quartz.SchedulerFactoryBean.startScheduler   :  729] [main] >> Starting Quartz Scheduler now
 2024-08-29 22:52:13.196 INFO  [org.quartz.core.QuartzScheduler.start                       :  547] [main] >> Scheduler quartzScheduler_$_NON_CLUSTERED started.
 2024-08-29 22:52:13.202 INFO  [org.springframework.boot.StartupInfoLogger.logStarted       :   61] [main] >> Started BatchApplication in 0.955 seconds (JVM running for 1.245)
+2024-08-29 23:40:54.640 INFO  [org.quartz.core.QuartzScheduler.standby                     :  585] [ownHook] >> Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2024-08-29 23:40:54.658 INFO  [o.s.scheduling.quartz.SchedulerFactoryBean.destroy          :  847] [ownHook] >> Shutting down Quartz Scheduler
+2024-08-29 23:40:54.658 INFO  [org.quartz.core.QuartzScheduler.shutdown                    :  666] [ownHook] >> Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2024-08-29 23:40:54.659 INFO  [org.quartz.core.QuartzScheduler.standby                     :  585] [ownHook] >> Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2024-08-29 23:40:54.659 INFO  [org.quartz.core.QuartzScheduler.shutdown                    :  740] [ownHook] >> Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
