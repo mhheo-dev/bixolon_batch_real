@@ -1,4 +1,4 @@
-package com.bixpos.batch.domain.bill;
+package com.bixpos.batch.business.domain.bill;
 
 import lombok.Data;
 import lombok.Getter;

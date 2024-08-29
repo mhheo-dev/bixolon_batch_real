@@ -266,3 +266,30 @@ Caused by: java.io.FileNotFoundException: class path resource [com.bixpos.batch/
 2024-08-29 22:43:25.960 INFO  [org.quartz.core.QuartzScheduler.shutdown                    :  666] [ownHook] >> Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
 2024-08-29 22:43:25.960 INFO  [org.quartz.core.QuartzScheduler.standby                     :  585] [ownHook] >> Scheduler quartzScheduler_$_NON_CLUSTERED paused.
 2024-08-29 22:43:25.960 INFO  [org.quartz.core.QuartzScheduler.shutdown                    :  740] [ownHook] >> Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2024-08-29 22:52:12.455 INFO  [org.springframework.boot.StartupInfoLogger.logStarting      :   55] [main] >> Starting BatchApplication using Java 11.0.23 on heominhoui-MacBookPro.local with PID 35442 (/Users/mhheo/Documents/work/BIXOLON_BILLING_SERVER/source/batch/build/classes/java/main started by mhheo in /Users/mhheo/Documents/work/BIXOLON_BILLING_SERVER/source/batch)
+2024-08-29 22:52:12.457 INFO  [springframework.boot.SpringApplication.logStartupProfileInfo:  637] [main] >> The following 1 profile is active: "local"
+2024-08-29 22:52:12.822 INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize     :  108] [main] >> Tomcat initialized with port(s): 8080 (http)
+2024-08-29 22:52:12.826 INFO  [org.apache.juli.logging.DirectJDKLog.log                    :  173] [main] >> Starting service [Tomcat]
+2024-08-29 22:52:12.826 INFO  [org.apache.juli.logging.DirectJDKLog.log                    :  173] [main] >> Starting Servlet engine: [Apache Tomcat/9.0.71]
+2024-08-29 22:52:12.865 INFO  [org.apache.juli.logging.DirectJDKLog.log                    :  173] [main] >> Initializing Spring embedded WebApplicationContext
+2024-08-29 22:52:12.865 INFO  [vletWebServerApplicationContext.prepareWebApplicationContext:  292] [main] >> Root WebApplicationContext: initialization completed in 394 ms
+2024-08-29 22:52:12.902 INFO  [com.bixpos.batch.db.construct.DataSourceBuilder.build       :   21] [main] >> configureDataSource : <DataSourceProperties(driverClassName=com.microsoft.sqlserver.jdbc.SQLServerDriver, url=jdbc:sqlserver://localhost:1433;databaseName=BIXACCDT_BIXOLON;sendStringParametersAsUnicode=false, username=asp_account, initialSize=1, minIdle=3, maxTotal=10, maxIdle=3, maxWaitMillis=3000, validationQuery=select 1, testOnBorrow=false, testOnReturn=false, testWhileIdle=true, validationQueryTimeout=10000, defaultAutoCommit=true, defaultReadOnly=true, poolPreparedStatements=true, maxOpenPreparedStatements=1000)>
+2024-08-29 22:52:13.156 INFO  [org.quartz.impl.StdSchedulerFactory.instantiate             : 1220] [main] >> Using default implementation for ThreadExecutor
+2024-08-29 22:52:13.160 INFO  [org.quartz.core.SchedulerSignalerImpl.<init>                :   61] [main] >> Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2024-08-29 22:52:13.160 INFO  [org.quartz.core.QuartzScheduler.<init>                      :  229] [main] >> Quartz Scheduler v.2.3.2 created.
+2024-08-29 22:52:13.160 INFO  [org.quartz.simpl.RAMJobStore.initialize                     :  155] [main] >> RAMJobStore initialized.
+2024-08-29 22:52:13.160 INFO  [org.quartz.core.QuartzScheduler.initialize                  :  294] [main] >> Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2024-08-29 22:52:13.161 INFO  [org.quartz.impl.StdSchedulerFactory.instantiate             : 1374] [main] >> Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2024-08-29 22:52:13.161 INFO  [org.quartz.impl.StdSchedulerFactory.instantiate             : 1378] [main] >> Quartz scheduler version: 2.3.2
+2024-08-29 22:52:13.161 INFO  [org.quartz.core.QuartzScheduler.setJobFactory               : 2293] [main] >> JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@4d354a3e
+2024-08-29 22:52:13.195 INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer.start          :  220] [main] >> Tomcat started on port(s): 8080 (http) with context path ''
+2024-08-29 22:52:13.196 INFO  [o.s.scheduling.quartz.SchedulerFactoryBean.startScheduler   :  729] [main] >> Starting Quartz Scheduler now
+2024-08-29 22:52:13.196 INFO  [org.quartz.core.QuartzScheduler.start                       :  547] [main] >> Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2024-08-29 22:52:13.202 INFO  [org.springframework.boot.StartupInfoLogger.logStarted       :   61] [main] >> Started BatchApplication in 0.955 seconds (JVM running for 1.245)

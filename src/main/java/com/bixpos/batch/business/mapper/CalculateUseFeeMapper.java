@@ -1,6 +1,6 @@
-package com.bixpos.batch.mapper;
+package com.bixpos.batch.business.mapper;
 
-import com.bixpos.batch.domain.bill.Shop;
+import com.bixpos.batch.business.domain.bill.Shop;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

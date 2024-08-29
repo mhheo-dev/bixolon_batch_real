@@ -1,4 +1,4 @@
-package com.bixpos.batch.db.construct;
+package com.bixpos.batch.project.db.construct;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;

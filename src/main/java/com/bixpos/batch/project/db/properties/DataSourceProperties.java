@@ -1,4 +1,4 @@
-package com.bixpos.batch.db.properties;
+package com.bixpos.batch.project.db.properties;
 
 import lombok.Data;
 import lombok.ToString;

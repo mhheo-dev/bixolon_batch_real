@@ -1,4 +1,4 @@
-package com.bixpos.batch.common;
+package com.bixpos.batch.project.common;
 
 import java.security.MessageDigest;
 import java.security.SignatureException;

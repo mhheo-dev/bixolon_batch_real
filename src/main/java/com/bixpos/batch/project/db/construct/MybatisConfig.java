@@ -1,6 +1,6 @@
-package com.bixpos.batch.db.construct;
+package com.bixpos.batch.project.db.construct;
 
-import com.bixpos.batch.db.properties.DataSourceProperties;
+import com.bixpos.batch.project.db.properties.DataSourceProperties;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.session.SqlSessionFactory;

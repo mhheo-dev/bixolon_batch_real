@@ -1,4 +1,4 @@
-package com.bixpos.batch.db.annotation;
+package com.bixpos.batch.project.db.annotation;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
