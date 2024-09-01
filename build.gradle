@@ -49,3 +49,15 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 }
+sourceSets {
+    test {
+        resources {
+            srcDirs = ["src/test/resources", "src/test/java"]
+        }
+    }
+}
+
+test {
+    systemProperty "spring.profiles.active", "test"
+    useJUnitPlatform()
+}

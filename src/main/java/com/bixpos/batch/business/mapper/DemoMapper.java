@@ -9,5 +9,5 @@ import java.util.List;
 @Mapper
 public interface DemoMapper {
     List<Reference.DemoReference> getDemoReference();
-    void insertDemoReference(Table.DemoTable demoTable);
+    void insertDemo(Table.DemoTable demoTable);
 }

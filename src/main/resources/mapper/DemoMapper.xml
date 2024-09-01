@@ -9,13 +9,13 @@
              , DEMO_COLUMN1
              , DEMO_COLUMN2
              , DEMO_VALUE
-        FROM ${accdtDb}.dbo.DEMO_REFERENCE
+        FROM BIXACCDT_BIXOLON.dbo.DEMO_REFERENCE
         WHERE 1 = 1
     </select>
 
-    <insert id="insertDemoReference"
+    <insert id="insertDemo"
     parameterType="com.bixpos.batch.business.domain.Table$DemoTable">
-        INSERT INTO ${accdtDb}.dbo.DEMO_TABLE(DEMO_COLUMN1, DEMO_COLUMN2, DEMO_COLUMN3)
+        INSERT INTO BIXACCDT_BIXOLON.dbo.DEMO_TABLE(DEMO_COLUMN1, DEMO_COLUMN2, DEMO_VALUE)
         VALUES (#{demoColumn1}, #{demoColumn2}, #{demoValue})
     </insert>
 </mapper>

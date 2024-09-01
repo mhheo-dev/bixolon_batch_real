@@ -17,9 +17,9 @@ public class DemoItemProcessor implements ItemProcessor<Reference.DemoReference,
         Table.DemoTable demoTable = new Table.DemoTable();
         demoTable.setDemoColumn1(item.getDemoColumn1());
         demoTable.setDemoColumn2(item.getDemoColumn2());
-        demoTable.setDemoValue(item.getDemoValue()+1);
+        demoTable.setDemoValue(item.getDemoValue() + 1);
 
         log.info("Processing: {} -> {}", item, demoTable);
-        return null;
+        return demoTable;  // null 대신 demoTable 객체를 반환
     }
 }
