@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bixpos.batch.business.mapper.DemoMapper">
+    <select id="getDemoReference" resultType="com.bixpos.batch.business.domain.Reference$DemoReference">
+        SELECT ID
+             , DEMO_COLUMN1
+             , DEMO_COLUMN2
+             , DEMO_VALUE
+        FROM ${accdtDb}.dbo.DEMO_REFERENCE
+        WHERE 1 = 1
+    </select>
+
+    <insert id="insertDemoReference"
+    parameterType="com.bixpos.batch.business.domain.Table$DemoTable">
+        INSERT INTO ${accdtDb}.dbo.DEMO_TABLE(DEMO_COLUMN1, DEMO_COLUMN2, DEMO_COLUMN3)
+        VALUES (#{demoColumn1}, #{demoColumn2}, #{demoValue})
+    </insert>
+</mapper>

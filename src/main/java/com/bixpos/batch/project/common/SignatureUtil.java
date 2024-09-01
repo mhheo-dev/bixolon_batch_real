@@ -1,5 +1,6 @@
 package com.bixpos.batch.project.common;
 
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.SignatureException;
 import java.util.Calendar;
@@ -40,11 +41,11 @@ public class SignatureUtil {
     public static String makeSignatureAuth(Map<String, String> parameters) throws Exception {
         if (parameters != null && !parameters.isEmpty()) {
             String stringToSign = "";
-            String mid = (String)parameters.get("mid");
-            String tstamp = (String)parameters.get("tstamp");
-            String MOID = (String)parameters.get("MOID");
-            String TotPrice = (String)parameters.get("TotPrice");
-            String tstampKey = ((String)parameters.get("tstamp")).substring(((String)parameters.get("tstamp")).length() - 1);
+            String mid = parameters.get("mid");
+            String tstamp = parameters.get("tstamp");
+            String MOID = parameters.get("MOID");
+            String TotPrice = parameters.get("TotPrice");
+            String tstampKey = parameters.get("tstamp").substring(parameters.get("tstamp").length() - 1);
             switch(Integer.parseInt(tstampKey)) {
             case 0:
                 stringToSign = "TotPrice=" + TotPrice + "&tstamp=" + tstamp + "&MOID=" + MOID;
@@ -86,7 +87,7 @@ public class SignatureUtil {
 
     public static String hash(String data, String algorithm) throws Exception {
         MessageDigest md = MessageDigest.getInstance(algorithm);
-        md.update(data.getBytes("UTF-8"));
+        md.update(data.getBytes(StandardCharsets.UTF_8));
         byte[] hashbytes = md.digest();
         StringBuilder sbuilder = new StringBuilder();
 
@@ -99,16 +100,16 @@ public class SignatureUtil {
 
     @SuppressWarnings({ "rawtypes", "unchecked" })
     private static String calculateString(Map<String, String> parameters) throws SignatureException {
-        StringBuffer stringToSign = new StringBuffer("");
+        StringBuffer stringToSign = new StringBuffer();
         Map<String, String> sortedParamMap = new TreeMap();
         sortedParamMap.putAll(parameters);
         Iterator pairs = sortedParamMap.entrySet().iterator();
 
         while(pairs.hasNext()) {
             Entry<String, String> pair = (Entry)pairs.next();
-            stringToSign.append(((String)pair.getKey()).trim());
+            stringToSign.append(pair.getKey().trim());
             stringToSign.append("=");
-            stringToSign.append(((String)pair.getValue()).trim());
+            stringToSign.append(pair.getValue().trim());
             if (pairs.hasNext()) {
                 stringToSign.append("&");
             }
