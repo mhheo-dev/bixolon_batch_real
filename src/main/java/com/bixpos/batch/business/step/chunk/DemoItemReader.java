@@ -1,4 +1,4 @@
-package com.bixpos.batch.business.step.chunk.reader;
+package com.bixpos.batch.business.step.chunk;
 
 import com.bixpos.batch.business.domain.Reference.DemoReference;
 

@@ -1,4 +1,4 @@
-package com.bixpos.batch.business.step.chunk.writer;
+package com.bixpos.batch.business.step.chunk;
 
 import com.bixpos.batch.business.domain.Table;
 import com.bixpos.batch.business.mapper.DemoMapper;

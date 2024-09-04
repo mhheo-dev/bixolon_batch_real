@@ -2,9 +2,9 @@ package com.bixpos.batch.business.config;
 
 import com.bixpos.batch.business.domain.Reference;
 import com.bixpos.batch.business.domain.Table;
-import com.bixpos.batch.business.step.chunk.processor.DemoItemProcessor;
-import com.bixpos.batch.business.step.chunk.reader.DemoItemReader;
-import com.bixpos.batch.business.step.chunk.writer.DemoItemWriter;
+import com.bixpos.batch.business.step.chunk.DemoItemProcessor;
+import com.bixpos.batch.business.step.chunk.DemoItemReader;
+import com.bixpos.batch.business.step.chunk.DemoItemWriter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;

@@ -1,4 +1,4 @@
-package com.bixpos.batch.business.step.chunk.processor;
+package com.bixpos.batch.business.step.chunk;
 
 import com.bixpos.batch.business.domain.Reference;
 import com.bixpos.batch.business.domain.Table;

@@ -1,7 +1,7 @@
 package com.bixpos.batch.demo.chunk;
 
 import com.bixpos.batch.business.domain.Table;
-import com.bixpos.batch.business.step.chunk.writer.DemoItemWriter;
+import com.bixpos.batch.business.step.chunk.DemoItemWriter;
 import org.junit.jupiter.api.Test;
 import org.springframework.batch.core.StepExecution;
 import org.springframework.batch.test.MetaDataInstanceFactory;

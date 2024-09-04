@@ -2,10 +2,9 @@ package com.bixpos.batch.demo.chunk;
 
 import com.bixpos.batch.business.domain.Reference;
 import com.bixpos.batch.business.domain.Table;
-import com.bixpos.batch.business.step.chunk.processor.DemoItemProcessor;
+import com.bixpos.batch.business.step.chunk.DemoItemProcessor;
 import org.junit.jupiter.api.Test;
 import org.springframework.batch.core.StepExecution;
-import org.springframework.batch.item.ExecutionContext;
 import org.springframework.batch.test.MetaDataInstanceFactory;
 import org.springframework.batch.test.StepScopeTestUtils;
 import org.springframework.beans.factory.annotation.Autowired;

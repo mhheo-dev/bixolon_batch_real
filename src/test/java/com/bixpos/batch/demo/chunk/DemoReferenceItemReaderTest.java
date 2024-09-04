@@ -1,7 +1,7 @@
 package com.bixpos.batch.demo.chunk;
 
 import com.bixpos.batch.business.domain.Reference;
-import com.bixpos.batch.business.step.chunk.reader.DemoItemReader;
+import com.bixpos.batch.business.step.chunk.DemoItemReader;
 import org.junit.jupiter.api.Test;
 import org.springframework.batch.core.StepExecution;
 import org.springframework.batch.test.MetaDataInstanceFactory;
