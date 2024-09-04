@@ -41,7 +41,7 @@ spring:
       script: classpath:/org/springframework/batch/core/schema-sqlserver.sql
 
   application:
-    accdtdb: BIXACCDT_BIXOLON
+    aspdb: BIXASP_BIXOLON
     smsdb: BIXSMS_BIXOLON
 
   pg-billing:

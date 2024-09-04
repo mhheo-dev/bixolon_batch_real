@@ -28,7 +28,10 @@ public class DemoItemProcessorTest {
 
         StepScopeTestUtils.doInStepScope(stepExecution, () -> {
             Reference.DemoReference input = new Reference.DemoReference();
+            input.setId(9999);
             input.setDemoValue(10);
+            input.setDemoColumn1("VALUE9999");
+            input.setDemoColumn2("VALUE9999");
 
             Table.DemoTable output = processor.process(input);
 

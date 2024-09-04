@@ -21,8 +21,8 @@ public class MybatisConfig {
 @MapperScan(basePackages = MybatisConfig.BASE_PACKAGE, annotationClass = Mapper.class, sqlSessionFactoryRef = "masterSqlSessionFactory")
 class MasterMyBatisConfig {
 
-    @Value("${spring.application.accdtdb}")
-    private String accdtDb;
+    @Value("${spring.application.aspdb}")
+    private String aspdb;
     
     @Value("${spring.application.smsdb}")
     private String smsDb;
@@ -30,7 +30,7 @@ class MasterMyBatisConfig {
     @Primary
     @Bean(name = "masterSqlSessionFactory")
     public SqlSessionFactory sqlSessionFactory(BasicDataSource dataSource) throws Exception {
-        return SqlSessionFactoryBuilder.build(dataSource, accdtDb, smsDb);
+        return SqlSessionFactoryBuilder.build(dataSource, aspdb, smsDb);
     }
 
     @Bean(name = "masterTransactionManager")

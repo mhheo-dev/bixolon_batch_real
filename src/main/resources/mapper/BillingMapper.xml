@@ -10,7 +10,7 @@
         SET SB_ST     = 'S', -- 이용중(구독중)
             MOD_USRID = 'SYSTEM',
             MOD_DT    = GETDATE()
-        FROM ${accdtdb}.dbo.SHOP_BILL SB
+        FROM ${aspdb}.dbo.SHOP_BILL SB
         WHERE SB.SB_ST = 'N' -- 신규
           AND CAST(SB.SB_PAY_START_MM + '01' AS DATETIME) <![CDATA[<]]> GETDATE()
     </update>

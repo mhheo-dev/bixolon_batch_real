@@ -22,7 +22,7 @@ public class SqlSessionFactoryBuilder {
      * @return SqlSessionFactory
      * @throws Exception 예외가 발생할 경우 던짐
      */
-    public static SqlSessionFactory build(DataSource dataSource, String accdtDb, String smsDb) throws Exception {
+    public static SqlSessionFactory build(DataSource dataSource, String aspdb, String smsDb) throws Exception {
         PathMatchingResourcePatternResolver pathResolver = new PathMatchingResourcePatternResolver();
 
         SqlSessionFactoryBean sessionFactoryBean = new SqlSessionFactoryBean();
@@ -33,7 +33,7 @@ public class SqlSessionFactoryBuilder {
         sessionFactoryBean.setMapperLocations(pathResolver.getResources(MAPPER_LOCATIONS_PATH));
         
         Properties configurationProperties = new Properties();
-        configurationProperties.put("accdtdb", accdtDb);
+        configurationProperties.put("aspdb", aspdb);
         configurationProperties.put("smsdb", smsDb);
         sessionFactoryBean.setConfigurationProperties(configurationProperties);
 
